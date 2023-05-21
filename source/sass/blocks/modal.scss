@@ -86,31 +86,3 @@
     }
   }
 }
-
-.button--close-modal-error {
-  width: 180px;
-  height: 58px;
-
-  font-size: 18px;
-
-  @media (min-width: $tablet-width) {
-    width: 272px;
-
-    font-size: 21px;
-    line-height: 26px;
-  }
-}
-
-.button--close-modal-success {
-  width: 280px;
-  height: 58px;
-
-  font-size: 18px;
-
-  @media (min-width: $tablet-width) {
-    width: 458px;
-
-    font-size: 21px;
-    line-height: 26px;
-  }
-}

@@ -7,14 +7,14 @@
 
   text-align: center;
 
-  background-image: url("../../img/backgrounds/back-desktop.jpg");
+  background-image: url("../img/backgrounds/back-desktop.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: $color-pink-swan;
 
   &::after {
-    content: url("../../img/svg/intro-triangle.svg");
+    content: url("../img/svg/intro-triangle.svg");
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -26,7 +26,7 @@
   }
 
   @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
-    background-image: url("../../img/backgrounds/back-desktop@2x.jpg");
+    background-image: url("../img/backgrounds/back-desktop@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {

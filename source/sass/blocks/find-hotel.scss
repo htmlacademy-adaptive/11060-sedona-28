@@ -9,7 +9,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 60px 371px 66px;
+    padding: 62px 371px 66px;
   }
 }
 
@@ -44,6 +44,7 @@
 .find-hotel__button {
   width: 284px;
   min-height: 58px;
+  padding: 14px;
 
   @media (min-width: $tablet-width) {
     width: 458px;

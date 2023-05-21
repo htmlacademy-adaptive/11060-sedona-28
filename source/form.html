@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Форма отзыва</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="/fonts/ptsans.woff2" as="font">
   <link rel="preload" href="/fonts/ptsansbold.woff2" as="font">
 </head>
@@ -16,7 +20,7 @@
       <a class="main-header__logo" href="index.html">
         <img src="img/content/logo.svg" width="185" height="96" alt="Логотип Седоны.">
       </a>
-      <button class="main-header__toggle">
+      <button type="button" class="main-header__toggle">
         <span class="visually-hidden">Открыть/закрыть меню.</span>
       </button>
       <nav class="navigation">
@@ -25,7 +29,8 @@
           <li class="navigation__item"><a class="navigation__item-link" href="catalog.html">Фото и видео</a></li>
           <li class="navigation__item navigation__item--current"><a class="navigation__item-link" href="form.html">Форма
               отзыва</a></li>
-          <li class="navigation__item"><a class="navigation__item-link" href="www.htmlacademy.ru" target="_blank">HTML Academy</a></li>
+          <li class="navigation__item"><a class="navigation__item-link" href="www.htmlacademy.ru" target="_blank">HTML
+              Academy</a></li>
         </ul>
       </nav>
     </header>
@@ -150,7 +155,7 @@
             <h3 class="form__title title form__title--line">Опишите свои эмоции:</h3>
             <fieldset class="form__fieldset form__fieldset--textarea">
               <label class="form__label" for="add-feedback-emotions">
-                <span class="visually-hidden">Ваши эмоции в текстовой форме</span>
+                <span class="visually-hidden">Ваши эмоции в текстовой форме.</span>
                 <textarea class="form__textarea title" id="add-feedback-emotions" name="feedback-emotions"
                   placeholder="Опишите подробно все свои восторги"></textarea>
               </label>
@@ -170,20 +175,22 @@
       <p class="main-footer__hashtag">#VISITSEDONA</p>
       <ul class="social-list">
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"
+            aria-label="Седона Вконтакте."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"
+            aria-label="Седона в Телеграме."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"
+            aria-label="Седона в Ютубе."></a>
         </li>
       </ul>
       <a href="https://htmlacademy.ru/intensive/adaptive" class="main-footer__copyright-link"
         target="_blank">Разработано</a>
     </footer>
 
-    <!-- Для просмотра модального окна добавить блоку modal класс modal--is-open -->
     <div class="modal modal--error">
       <div class="modal__wrapper modal__wrapper--error">
         <h2 class="modal__title title">Что-то пошло<br class="modal__title--wrap"> &nbsp;не так!</h2>
@@ -196,7 +203,8 @@
     <div class="modal modal--success">
       <div class="modal__wrapper modal__wrapper--success">
         <h2 class="modal__title title">Ваш отзыв отправлен!</h2>
-        <p class="modal__description modal__description--success subtitle">Спасибо за ваше участие, ваш отзыв уже поступил к нам.<br> В ближайшее время
+        <p class="modal__description modal__description--success subtitle">Спасибо за ваше участие, ваш отзыв уже
+          поступил к нам.<br> В ближайшее время
           мы
           опубликуем его на сайте.</p>
         <a class="button button--close-modal-success" href="#">Закрыть окно</a>

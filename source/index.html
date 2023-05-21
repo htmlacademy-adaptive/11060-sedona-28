@@ -20,7 +20,7 @@
       <a class="main-header__logo" href="index.html">
         <img src="img/content/logo.svg" width="185" height="96" alt="Логотип Седоны.">
       </a>
-      <button class="main-header__toggle">
+      <button type="button" class="main-header__toggle">
         <span class="visually-hidden">Открыть/закрыть меню.</span>
       </button>
       <nav class="navigation">
@@ -39,7 +39,7 @@
       <h1 class="visually-hidden">Сайт городка Седона.</h1>
       <section class="intro">
         <h2 class="visually-hidden">Презентация Седоны.</h2>
-        <img class="intro__slogan" src="img/content/intro-slogan.svg" alt="Welcome to Sedona.">
+        <img class="intro__slogan" src="img/content/intro-slogan.svg" width="282" height="214" alt="Welcome to Sedona.">
       </section>
 
       <section class="advantages">
@@ -148,8 +148,14 @@
       </section>
 
       <section class="map">
-        <h2 class="visually-hidden">Карта Седоны</h2>
+        <h2 class="visually-hidden">Карта Седоны.</h2>
         <picture>
+          <source type="image/webp" media="(min-width: 1200px)"
+            srcset="img/map/map-desktop.webp 1x, img/map/map-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)"
+            srcset="img/map/map-tablet.webp 1x, img/map/map-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/map/map-mobile.webp 1x, img/map/map-mobile@2x.webp 2x">
+
           <source media="(min-width: 1200px)" srcset="img/map/map-desktop.jpg 1x, img/map/map-desktop@2x.jpg 2x">
           <source media="(min-width: 768px)" srcset="img/map/map-tablet.jpg 1x, img/map/map-tablet@2x.jpg 2x">
           <img class="map__image" src="img/map/map-mobile.jpg" srcset="img/map/map-mobile@2x.jpg" width="320"
@@ -165,13 +171,16 @@
       <p class="main-footer__hashtag">#VISITSEDONA</p>
       <ul class="social-list">
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"
+            aria-label="Седона Вконтакте."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"
+            aria-label="Седона в Телеграме."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"
+            aria-label="Седона в Ютубе."></a>
         </li>
       </ul>
       <a href="https://htmlacademy.ru/intensive/adaptive" class="main-footer__copyright-link"

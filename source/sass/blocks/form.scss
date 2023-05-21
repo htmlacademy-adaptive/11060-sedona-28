@@ -112,7 +112,7 @@
     }
 
     @media (min-width: $desktop-width) {
-      padding-bottom: 70px;
+      padding-bottom: 71px;
     }
   }
 
@@ -135,25 +135,26 @@
     padding: 19px 20px 21px;
 
     grid-template-columns: 1fr;
-    row-gap: 12px;
+    row-gap: 18px;
 
     @media (min-width: $tablet-width) {
       justify-content: center;
-      padding: 27px 20px 45px;
+      padding: 27px 20px 47px;
 
       column-gap: 16px;
 
       grid-template-columns: 280px 280px;
-      row-gap: 12px;
+      row-gap: 18px;
     }
 
     @media (min-width: $desktop-width) {
-      padding: 44px 0 71px;
+      padding: 46px 0 74px;
       padding-left: 40px;
 
       column-gap: 28px;
 
       grid-template-columns: 280px 280px 280px;
+      row-gap: 19px;
     }
   }
 
@@ -162,24 +163,26 @@
     padding: 20px 20px 20px;
 
     grid-template-columns: 1fr;
-    row-gap: 12px;
+    row-gap: 17px;
 
     @media (min-width: $tablet-width) {
       justify-content: center;
-      padding: 27px 20px 40px;
+      padding: 28px 20px 42px;
 
       column-gap: 32px;
 
       grid-template-columns: 224px 224px;
-      row-gap: 12px;
+      row-gap: 17px;
     }
 
     @media (min-width: $desktop-width) {
-      display: flex;
-      justify-content: space-between;
-      width: 871px;
-      margin: 0 auto;
-      padding: 58px 0 85px;
+      margin: 0 44px;
+      padding: 58px 0 87px;
+
+      column-gap: 64px;
+
+      grid-template-columns: repeat(4, auto);
+      row-gap: 19px;
     }
   }
 
@@ -204,6 +207,51 @@
   display: block;
 
   text-transform: none;
+
+  &--phone,
+  &--email {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 58px;
+      height: 58px;
+    }
+
+    & input {
+      padding-right: 76px;
+    }
+  }
+
+  &--phone {
+    &::after {
+      bottom: 14px;
+
+      background-image: url("../img/stack.svg#phone");
+    }
+  }
+
+  &--email {
+    &::after {
+      background-image: url("../img/stack.svg#mail");
+    }
+  }
+
+  &--radio,
+  &--checkbox {
+    display: grid;
+    //align-items: center;
+
+    grid-template-columns: min-content 1fr;
+
+    .form__label-text {
+      margin-top: 10px;
+    }
+  }
 }
 
 .form__input,
@@ -250,39 +298,6 @@ textarea {
   }
 }
 
-.form__label--phone,
-.form__label--email {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-
-    width: 58px;
-    height: 58px;
-  }
-
-  & input {
-    padding-right: 76px;
-  }
-}
-
-.form__label--phone {
-  &::after {
-    bottom: 14px;
-
-    background-image: url("../../img/stack.svg#phone");
-  }
-}
-
-.form__label--email {
-  &::after {
-    background-image: url("../../img/stack.svg#mail");
-  }
-}
-
 .form__label-text {
   padding-left: 16px;
 
@@ -312,17 +327,22 @@ textarea {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 64px;
+
+    column-gap: 150px;
   }
 
   @media (min-width: $desktop-width) {
     width: 768px;
     margin: 0 auto;
+
+    column-gap: 200px;
   }
 }
 
 .form__submit-button {
   width: 280px;
   min-height: 58px;
+  padding: 14px;
 
   @media (min-width: $tablet-width) {
     min-width: 324px;
@@ -351,21 +371,14 @@ textarea {
   opacity: 0;
 }
 
-.form__label--radio,
-.form__label--checkbox {
-  display: grid;
-  align-items: center;
-
-  grid-template-columns: min-content 1fr;
-}
-
 .form__icon {
   position: relative;
 
   &::before {
     content: "";
 
-    display: inline-block;
+    display: grid;
+    align-self: start;
     width: 46px;
     height: 46px;
 
@@ -402,13 +415,13 @@ textarea {
   background-color: $color-dark-whisper;
 }
 
-.form__radio:active + .form__icon::before,
-.form__checkbox:active + .form__icon::before {
+.form__radio:focus + .form__icon::before,
+.form__checkbox:focus + .form__icon::before {
   background-color: $color-lighter-grey;
 }
 
-.form__radio:checked:active + .form__icon::before,
-.form__checkbox:checked:active + .form__icon::before {
+.form__radio:checked:focus + .form__icon::before,
+.form__checkbox:checked:focus + .form__icon::before {
   background-color: $color-lighter-grey;
 }
 
@@ -426,7 +439,7 @@ textarea {
   border-radius: 50%;
 }
 
-.form__radio:active:checked + .form__icon::after {
+.form__radio:focus:checked + .form__icon::after {
   background-color: rgba($color-night-rider, 0.3);
 }
 
@@ -440,9 +453,9 @@ textarea {
   width: 22px;
   height: 16px;
 
-  background: url("../../img/stack.svg#tick");
+  background: url("../img/stack.svg#tick");
 }
 
-.form__checkbox:active:checked + .form__icon::after {
+.form__checkbox:focus:checked + .form__icon::after {
   opacity: 30%;
 }

@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Галерея</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="/fonts/ptsans.woff2" as="font">
   <link rel="preload" href="/fonts/ptsansbold.woff2" as="font">
 </head>
@@ -16,7 +20,7 @@
       <a class="main-header__logo" href="index.html">
         <img src="img/content/logo.svg" width="185" height="96" alt="Логотип Седоны.">
       </a>
-      <button class="main-header__toggle">
+      <button type="button" class="main-header__toggle">
         <span class="visually-hidden">Открыть/закрыть меню.</span>
       </button>
       <nav class="navigation">
@@ -26,7 +30,8 @@
               href="catalog.html">Фото
               и видео</a></li>
           <li class="navigation__item"><a class="navigation__item-link" href="form.html">Форма отзыва</a></li>
-          <li class="navigation__item"><a class="navigation__item-link" href="www.htmlacademy.ru" target="_blank">HTML Academy</a></li>
+          <li class="navigation__item"><a class="navigation__item-link" href="www.htmlacademy.ru" target="_blank">HTML
+              Academy</a></li>
         </ul>
       </nav>
     </header>
@@ -52,12 +57,19 @@
               <figure class="gallery__card gallery__card--wide">
                 <a href="#" class="gallery__item-image-link">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/gallery/spaces-desktop.webp 1x, img/gallery/spaces-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/gallery/spaces-tablet.webp 1x, img/gallery/spaces-tablet@2x.webp 2x">
+                    <source type="image/webp"
+                      srcset="img/gallery/spaces-mobile.webp 1x, img/gallery/spaces-mobile@2x.webp 2x">
+
                     <source media="(min-width: 1200px)"
-                      srcset="img/gallery/photo-1-desktop.jpg 1x, img/gallery/photo-1-desktop@2x.jpg 2x">
+                      srcset="img/gallery/spaces-desktop.jpg 1x, img/gallery/spaces-desktop@2x.jpg 2x">
                     <source media="(min-width: 768px)"
-                      srcset="img/gallery/photo-1-tablet.jpg 1x, img/gallery/photo-1-tablet@2x.jpg 2x">
-                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/photo-1-mobile.jpg"
-                      srcset="img/gallery/photo-1-mobile@2x.jpg 2x" alt="Неродные просторы">
+                      srcset="img/gallery/spaces-tablet.jpg 1x, img/gallery/spaces-tablet@2x.jpg 2x">
+                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/spaces-mobile.jpg"
+                      srcset="img/gallery/spaces-mobile@2x.jpg 2x" alt="Неродные просторы">
                   </picture>
                 </a>
                 <figcaption class="gallery__item-legend">
@@ -65,7 +77,12 @@
                     <h3 class="gallery__item-title subtitle subtitle--bold">Неродные просторы</h3>
                     <p class="gallery__item-author subtitle">Автор фото: Борис</p>
                   </div>
-                  <span class="gallery__item-likes subtitle subtitle--bold">1350</span>
+                  <div class="gallery__likes-wrapper">
+                    <button type="button" class="gallery__item-likes">
+                      <span class="visually-hidden">Поставить лайк.</span>
+                    </button>
+                    <span class="gallery__likes-counter subtitle subtitle--bold">1350</span>
+                  </div>
                 </figcaption>
               </figure>
             </li>
@@ -74,12 +91,19 @@
               <figure class="gallery__card">
                 <a href="#" class="gallery__item-image-link">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/gallery/vegetation-desktop.webp 1x, img/gallery/vegetation-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/gallery/vegetation-tablet.webp 1x, img/gallery/vegetation-tablet@2x.webp 2x">
+                    <source type="image/webp"
+                      srcset="img/gallery/vegetation-mobile.webp 1x, img/gallery/vegetation-mobile@2x.webp 2x">
+
                     <source media="(min-width: 1200px)"
-                      srcset="img/gallery/photo-2-desktop.jpg 1x, img/gallery/photo-2-desktop@2x.jpg 2x">
+                      srcset="img/gallery/vegetation-desktop.jpg 1x, img/gallery/vegetation-desktop@2x.jpg 2x">
                     <source media="(min-width: 768px)"
-                      srcset="img/gallery/photo-2-tablet.jpg 1x, img/gallery/photo-2-tablet@2x.jpg 2x">
-                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/photo-2-mobile.jpg"
-                      srcset="img/gallery/photo-2-mobile@2x.jpg 2x" alt="Местная растительность">
+                      srcset="img/gallery/vegetation-tablet.jpg 1x, img/gallery/vegetation-tablet@2x.jpg 2x">
+                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/vegetation-mobile.jpg"
+                      srcset="img/gallery/vegetation-mobile@2x.jpg 2x" alt="Местная растительность">
                   </picture>
 
                 </a>
@@ -88,7 +112,12 @@
                     <h3 class="gallery__item-title subtitle subtitle--bold">Местная растительность</h3>
                     <p class="gallery__item-author subtitle">Автор фото: Сергей</p>
                   </div>
-                  <span class="gallery__item-likes subtitle subtitle--bold">143</span>
+                  <div class="gallery__likes-wrapper">
+                    <button type="button" class="gallery__item-likes">
+                      <span class="visually-hidden">Поставить лайк.</span>
+                    </button>
+                    <span class="gallery__likes-counter subtitle subtitle--bold">143</span>
+                  </div>
                 </figcaption>
               </figure>
             </li>
@@ -97,12 +126,19 @@
               <figure class="gallery__card">
                 <a href="#" class="gallery__item-image-link">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/gallery/north-desktop.webp 1x, img/gallery/north-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/gallery/north-tablet.webp 1x, img/gallery/north-tablet@2x.webp 2x">
+                    <source type="image/webp"
+                      srcset="img/gallery/north-mobile.webp 1x, img/gallery/north-mobile@2x.webp 2x">
+
                     <source media="(min-width: 1200px)"
-                      srcset="img/gallery/photo-3-desktop.jpg 1x, img/gallery/photo-3-desktop@2x.jpg 2x">
+                      srcset="img/gallery/north-desktop.jpg 1x, img/gallery/north-desktop@2x.jpg 2x">
                     <source media="(min-width: 768px)"
-                      srcset="img/gallery/photo-3-tablet.jpg 1x, img/gallery/photo-3-tablet@2x.jpg 2x">
-                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/photo-3-mobile.jpg"
-                      srcset="img/gallery/photo-3-mobile@2x.jpg 2x" alt="Дорога на север">
+                      srcset="img/gallery/north-tablet.jpg 1x, img/gallery/north-tablet@2x.jpg 2x">
+                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/north-mobile.jpg"
+                      srcset="img/gallery/north-mobile@2x.jpg 2x" alt="Дорога на север">
                   </picture>
                 </a>
                 <figcaption class="gallery__item-legend">
@@ -110,7 +146,12 @@
                     <h3 class="gallery__item-title subtitle subtitle--bold">Дорога на север</h3>
                     <p class="gallery__item-author subtitle">Автор фото: Петр</p>
                   </div>
-                  <span class="gallery__item-likes subtitle subtitle--bold">96</span>
+                  <div class="gallery__likes-wrapper">
+                    <button type="button" class="gallery__item-likes">
+                      <span class="visually-hidden">Поставить лайк.</span>
+                    </button>
+                    <span class="gallery__likes-counter subtitle subtitle--bold">96</span>
+                  </div>
                 </figcaption>
               </figure>
             </li>
@@ -119,12 +160,19 @@
               <figure class="gallery__card">
                 <a href="#" class="gallery__item-image-link">
                   <picture>
+                    <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/gallery/bridge-desktop.webp 1x, img/gallery/bridge-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/gallery/bridge-tablet.webp 1x, img/gallery/bridge-tablet@2x.webp 2x">
+                    <source type="image/webp"
+                      srcset="img/gallery/bridge-mobile.webp 1x, img/gallery/bridge-mobile@2x.webp 2x">
+
                     <source media="(min-width: 1200px)"
-                      srcset="img/gallery/photo-4-desktop.jpg 1x, img/gallery/photo-4-desktop@2x.jpg 2x">
+                      srcset="img/gallery/bridge-desktop.jpg 1x, img/gallery/bridge-desktop@2x.jpg 2x">
                     <source media="(min-width: 768px)"
-                      srcset="img/gallery/photo-4-tablet.jpg 1x, img/gallery/photo-4-tablet@2x.jpg 2x">
-                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/photo-4-mobile.jpg"
-                      srcset="img/gallery/photo-3-mobile@2x.jpg 2x" alt="Мост Дьявола">
+                      srcset="img/gallery/bridge-tablet.jpg 1x, img/gallery/bridge-tablet@2x.jpg 2x">
+                    <img class="gallery__item-image" width="280" height="280" src="img/gallery/bridge-mobile.jpg"
+                      srcset="img/gallery/bridge-mobile@2x.jpg 2x" alt="Мост Дьявола">
                   </picture>
                 </a>
                 <figcaption class="gallery__item-legend">
@@ -132,7 +180,13 @@
                     <h3 class="gallery__item-title subtitle subtitle--bold">Мост Дьявола</h3>
                     <p class="gallery__item-author subtitle">Автор фото: Антон</p>
                   </div>
-                  <span class="gallery__item-likes subtitle subtitle--bold">254</span>
+
+                  <div class="gallery__likes-wrapper">
+                    <button type="button" class="gallery__item-likes">
+                      <span class="visually-hidden">Поставить лайк.</span>
+                    </button>
+                    <span class="gallery__likes-counter subtitle subtitle--bold">254</span>
+                  </div>
                 </figcaption>
               </figure>
             </li>
@@ -147,6 +201,12 @@
           </div>
           <div class="video__container">
             <picture>
+              <source type="image/webp" media="(min-width: 1200px)"
+                srcset="img/gallery/video-desktop.webp 1x, img/gallery/video-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)"
+                srcset="img/gallery/video-tablet.webp 1x, img/gallery/video-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/gallery/video-mobile.webp 1x, img/gallery/video-mobile@2x.webp 2x">
+
               <source media="(min-width: 1200px)"
                 srcset="img/gallery/video-desktop.jpg 1x, img/gallery/video-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)"
@@ -154,7 +214,9 @@
               <img class="video__image" width="280" height="177" src="img/gallery/video-mobile.jpg"
                 srcset="img/gallery/video-mobile@2x.jpg 2x" alt="Видеоролик">
             </picture>
-            <button class="video__play-button"></button>
+            <button type="button" class="video__play-button">
+              <span class="visually-hidden">Кнопка проигрывания видеоролика.</span>
+            </button>
           </div>
         </section>
       </div>
@@ -164,13 +226,16 @@
       <p class="main-footer__hashtag">#VISITSEDONA</p>
       <ul class="social-list">
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--vk button" target="_blank"
+            aria-label="Седона Вконтакте."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--tg button" target="_blank"
+            aria-label="Седона в Телеграме."></a>
         </li>
         <li class="social-list__item">
-          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"></a>
+          <a href="#" class="social-list__link social-list__link--youtube button" target="_blank"
+            aria-label="Седона в Ютубе."></a>
         </li>
       </ul>
       <a href="https://htmlacademy.ru/intensive/adaptive" class="main-footer__copyright-link"
